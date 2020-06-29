@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Edbizarro\ClashRoyale\Player;
 use Edbizarro\ClashRoyale\Api;
+use Edbizarro\ClashRoyale\Clan;
 
 
 class PagesController extends Controller
@@ -12,22 +13,31 @@ class PagesController extends Controller
     //
 
     public function index(){
-        //This is the api token taken from the app.php file
+       return view('pages.index');
+    }
+
+    public function findMe(){
+         //This is the api token taken from the app.php file
         //Where the token is made into a constant...
         $apiToken = config('app.apiToken');
 
         Api::setApiToken($apiToken);
 
-        $player = new Player('#P0RUVLG82');
-        $player = $player->get();
+        //$player = new Player('#P0RUVLG82');
+        //$player = $player->get();
 
         //This is where we decode the the json data so we can use it
-        $playerData = json_decode($player); // decode the JSON feed
+        //$playerData = json_decode($player); // decode the JSON feed
 
+        $playerSearch = $_POST['playerSearch'];
+
+        $player = new Player($playerSearch);
+        $player = $player->get();
+        $playerData = json_decode($player);
 
         
 
         
-        return view('pages.index')->with('playerData', $playerData);
+        return view('pages.findMe')->with('playerData', $playerData);
     }
 }
