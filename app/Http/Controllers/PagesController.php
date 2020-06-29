@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Edbizarro\ClashRoyale\Player;
 use Edbizarro\ClashRoyale\Api;
 use Edbizarro\ClashRoyale\Clan;
+use GuzzleHttp\Exception\ClientException;
+use App\Exceptions\Handler;
+
 
 
 class PagesController extends Controller
@@ -31,13 +34,17 @@ class PagesController extends Controller
 
         $playerSearch = $_POST['playerSearch'];
 
+
+
         $player = new Player($playerSearch);
         $player = $player->get();
         $playerData = json_decode($player);
 
         
-
+        
         
         return view('pages.findMe')->with('playerData', $playerData);
+        
+
     }
 }
