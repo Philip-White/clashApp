@@ -7,7 +7,6 @@
 
     
         <title>{{ config('app.name', 'clashApp') }}</title>
-
          <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -19,6 +18,7 @@
         <script>tinymce.init({selector:'textarea'});</script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         
+        <link rel="stylesheet" href="/css/myOwnCss.css">
 
 </head>
 <body>

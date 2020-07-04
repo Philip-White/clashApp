@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 use Edbizarro\ClashRoyale\Player;
 use Edbizarro\ClashRoyale\Api;
 use Edbizarro\ClashRoyale\Clan;
-use GuzzleHttp\Exception\ClientException;
-use App\Exceptions\Handler;
 
 
 
