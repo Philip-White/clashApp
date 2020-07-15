@@ -24,7 +24,7 @@ class PagesController extends Controller
 
         Api::setApiToken($apiToken);
 
-        //$player = new Player('#P0RUVLG82');
+        //$player = new Player('YOUR_TAG_HERE');
         //$player = $player->get();
 
         //This is where we decode the the json data so we can use it
